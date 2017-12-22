@@ -19,7 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "dog-enigma-theme.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
