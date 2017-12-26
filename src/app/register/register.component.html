@@ -1,0 +1,32 @@
+<mat-card id="connexion-card">
+
+  <mat-card-header>
+    <div class="mat-card-header-text">
+      <mat-card-title>Inscription</mat-card-title>
+    </div>
+  </mat-card-header>
+  <mat-progress-bar *ngIf="loadingRequest" mode="indeterminate"></mat-progress-bar>
+  <mat-card-content>
+    <app-alert-error *ngIf="error" [error]="messageError"></app-alert-error>
+    <!-- formulaire de connexion -->
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+      <mat-form-field>
+        <input id="prenom" name="prenom" [(ngModel)]="newUser.prenom" #prenom="ngModel" matInput placeholder="Prénom" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input id="nom" name="nom" [(ngModel)]="newUser.nom" #nom="ngModel" matInput placeholder="Nom" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input id="email" name="email" [(ngModel)]="newUser.email" #email="ngModel" matInput placeholder="Email" required email>
+      </mat-form-field>
+      <mat-form-field>
+        <input id="pseudo" name="pseudo" [(ngModel)]="newUser.pseudo" #pseudo="ngModel" matInput placeholder="Pseudo" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input id="password" name="password" [(ngModel)]="newUser.password" #password="ngModel" type="password" matInput placeholder="Mot de passe"
+          required>
+      </mat-form-field>
+      <button [disabled]="!form.valid" type="submit" mat-raised-button color="primary">Valider</button>
+    </form>
+  </mat-card-content>
+</mat-card>

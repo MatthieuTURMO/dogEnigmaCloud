@@ -38,12 +38,14 @@ import { LoginService } from './-services/login.service';
 //router
 import { AppRoutingModule } from './app.routing';
 import { AlertErrorComponent } from './alert-error/alert-error.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    AlertErrorComponent
+    AlertErrorComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

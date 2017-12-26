@@ -6,20 +6,24 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import * as $ from 'jquery';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
-  private loadingRequest: boolean = false;
-  private error: any = false;
-  private messageError: String = '';
-
-  private user = {
+  //variable à envoyer au serveur pour la persistance
+  private newUser = {
     pseudo: '',
-    password: ''
+    prenom: '',
+    nom: '',
+    password: '',
+    email: ''
   };
+
+  private error: boolean = false;
+  private loadingRequest: boolean = false;
+  private messageError: String = '';
 
   constructor(private _loginService: LoginService) { }
 
@@ -30,7 +34,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.loadingRequest = true;
     //connexion au serveur
-    this._loginService.login(this.user.pseudo, this.user.password).subscribe(
+    this._loginService.login(this.newUser.pseudo, this.newUser.password).subscribe(
       res => {
         this.loadingRequest = false;
         this.error = false;
@@ -41,5 +45,4 @@ export class LoginComponent implements OnInit {
         this.messageError = err;
       });
   }
-
 }
