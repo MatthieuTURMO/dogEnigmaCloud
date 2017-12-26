@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 import 'hammerjs';
 
@@ -11,14 +14,22 @@ import { AppComponent } from './app.component';
 //material
 import {
   MatButtonModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatCardModule,
+  MatSelectModule,
 } from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatIconModule} from '@angular/material/icon';
 
 //covalent
 import {
   CovalentLayoutModule,
   CovalentStepsModule
 } from '@covalent/core';
+
+//own components
 import { LoginComponent } from './login/login.component';
 
 //own services
@@ -36,12 +47,20 @@ import { AlertErrorComponent } from './alert-error/alert-error.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CovalentLayoutModule,
     CovalentStepsModule,
     MatButtonModule,
     AppRoutingModule,
     MatCheckboxModule,
+    MatProgressBarModule,
     FormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatIconModule,
     HttpModule
   ],
   providers: [

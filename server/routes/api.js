@@ -23,7 +23,7 @@ router.post('/login', (req, res) => {
       if (!user) {
         res.status(403);
         res.send({
-          "login": "Pseudo inexistant"
+          "message": "Pseudo inexistant"
         });
       } 
       //si le  pseudo + mdp sont corrects
@@ -36,7 +36,7 @@ router.post('/login', (req, res) => {
         delete usrSend.password;
         delete usrSend.__v;
         res.send({
-          "login": "OK",
+          "message": "OK",
           "user": usrSend
         });
       }
@@ -44,7 +44,7 @@ router.post('/login', (req, res) => {
       else{
         res.status(403);
         res.send({
-          "login": "Mauvais mot de passe"
+          "message": "Mauvais mot de passe"
         });
       }
     });

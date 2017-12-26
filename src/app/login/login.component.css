@@ -1,0 +1,56 @@
+#connexion-card {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form button {
+    width: fit-content;
+    margin-top: 15px;
+}
+
+mat-card-header {
+    margin: -24px 0 -10px -24px !important;
+    text-align: center;
+    padding: 24px;
+    width: 100%;
+    background-color: #b5b6b9;
+}
+
+.mat-card-header-text {
+    margin: 0 auto !important;
+    text-transform: uppercase;
+    color: black;
+}
+
+.mat-card-header-text * {
+    margin: 0;
+    font-size: 22px;
+}
+
+mat-progress-bar {
+    margin: 0 -24px;
+    margin-top: 10px;
+    width: auto;
+}
+
+mat-card-content {
+    width: 80%;
+    margin: 24px auto;
+}
+
+/* :host ::ng-deep app-alert-error div {
+    background-color: pink;
+    display: block;
+    line-height:0;
+    height: 0;
+    overflow: hidden;
+}
+
+ :host ::ng-deep app-alert-error div mat-icon{
+     display : none;
+ } */

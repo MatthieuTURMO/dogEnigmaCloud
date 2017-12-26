@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges
+} from '@angular/core';
 
 @Component({
   selector: 'app-alert-error',
@@ -7,13 +12,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlertErrorComponent implements OnInit {
 
-  private message : String = 'LOXLD';
-
+  @Input() error: any;
+  private messageError: String;
+  private show = true;
   constructor() { }
 
-  
-
   ngOnInit() {
+    this.parseError();
   }
+
+  ngOnChanges() {
+    this.show = true;
+    this.parseError();
+  }
+
+  private parseError(){
+    var body = JSON.parse(this.error._body);
+    this.messageError = body.message;
+  }
+
+  private deleteThis(){
+    this.show = false;
+  }
+
+
 
 }

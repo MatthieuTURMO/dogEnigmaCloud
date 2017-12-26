@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../-services/login.service';
-import {AlertErrorComponent} from '../alert-error/alert-error.component';
+import { AlertErrorComponent } from '../alert-error/alert-error.component';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import * as $ from 'jquery';
 
@@ -11,21 +12,34 @@ import * as $ from 'jquery';
 })
 export class LoginComponent implements OnInit {
 
+  private loadingRequest: boolean = false;
+  private error: any = false;
+  private messageError: String = '';
+
+  private user = {
+    pseudo: '',
+    password: ''
+  };
+
   constructor(private _loginService: LoginService) { }
 
   ngOnInit() {
     console.log('init');
+  }
 
-    this._loginService.login("aaa", "bbb").subscribe(
+  onSubmit() {
+    console.log(this.error);
+    this.loadingRequest = true;
+    this._loginService.login(this.user.pseudo, this.user.password).subscribe(
       res => {
-        console.log(res);
+        this.loadingRequest = false;
+        this.error = false;
       },
       err => {
-        console.log(err);
+        this.loadingRequest = false;
+        this.error = true;
+        this.messageError = err;
       });
-
-      $('p').css('color', 'red');
-
   }
 
 }
