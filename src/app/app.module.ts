@@ -26,11 +26,13 @@ import { LoginService } from './-services/login.service';
 
 //router
 import { AppRoutingModule } from './app.routing';
+import { AlertErrorComponent } from './alert-error/alert-error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    AlertErrorComponent
   ],
   imports: [
     BrowserModule,

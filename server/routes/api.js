@@ -19,16 +19,18 @@ router.post('/login', (req, res) => {
     User.findOne({
       pseudo: pseudo
     }, function (err, user) {
+      //si le pseudo n'existe pas
       if (!user) {
         res.status(403);
         res.send({
           "login": "Pseudo inexistant"
         });
       } 
+      //si le  pseudo + mdp sont corrects
       else if(passwordHash.verify(pw, user.password)){
         //on met en place la session côté serveur pour le client qui vient de se connecter
         req.session.user = user;
-        console.log('Connexion de l user : ', user);
+        console.log('Connexion de l utilisateur : ', user);
         //on enlève le mot de passe pour envoyer les données au client
         var usrSend = JSON.parse(JSON.stringify(user));
         delete usrSend.password;
@@ -38,6 +40,7 @@ router.post('/login', (req, res) => {
           "user": usrSend
         });
       }
+      //si pseudo oK mais pas le bon mot de passe
       else{
         res.status(403);
         res.send({
@@ -51,6 +54,7 @@ router.post('/login', (req, res) => {
 //déconnexion de l'utilisateur courant
 router.get('/logout', (req, res) => {
   delete req.session.user;
+  console.log('Déconnexion de l utilisateur : ', req.session.user);
   res.send({
     "logout": true
   });

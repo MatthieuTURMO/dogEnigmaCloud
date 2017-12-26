@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../-services/login.service';
+import {AlertErrorComponent} from '../alert-error/alert-error.component';
+
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +23,9 @@ export class LoginComponent implements OnInit {
       err => {
         console.log(err);
       });
+
+      $('p').css('color', 'red');
+
   }
 
 }

@@ -3,11 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 
-const routes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: 'login' },
-    { path: 'first', component: AppComponent },
+const routes: Routes = [    
+    { path: '', component: AppComponent },
     { path: 'login', component: LoginComponent }
 ];
+
+// { path: '', pathMatch: 'full', redirectTo: 'login' },
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
