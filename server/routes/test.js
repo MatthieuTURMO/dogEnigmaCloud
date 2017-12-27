@@ -18,12 +18,11 @@ router.get('/', (req, res) => {
   });
 });
 
-
 router.get('/testConnexion', (req, res) => {
   req.session.user = 'AAA';
   res.send({
-      "pseudo" : "test",
-      "prenom" : "nom"
+    "pseudo": "test",
+    "prenom": "nom"
   });
 });
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../-services/login.service';
+import { UserService } from '../-services/user.service';
 import { AlertErrorComponent } from '../alert-error/alert-error.component';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
   private loadingRequest: boolean = false;
   private messageError: String = '';
 
-  constructor(private _loginService: LoginService) { }
+  constructor(private _userService: UserService) { }
 
   ngOnInit() {
     console.log('init');
@@ -34,16 +34,19 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     this.loadingRequest = true;
-    //connexion au serveur
-    this._loginService.login(this.newUser.pseudo, this.newUser.password).subscribe(
-      res => {
-        this.loadingRequest = false;
-        this.error = false;
-      },
-      err => {
-        this.loadingRequest = false;
-        this.error = true;
-        this.messageError = err;
-      });
   }
+
+  private checkAvailability($event){
+    var pseudo = $event.target.value
+    console.log(pseudo);
+    this._userService.checkAvailability(pseudo).subscribe(
+      res => {
+        console.log('OK DISPO');
+      },
+      error => {
+        console.log('PAS DISPO');
+      }
+    )
+  }
+
 }

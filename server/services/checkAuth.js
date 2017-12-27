@@ -6,7 +6,7 @@ exports.isAuthenticated = function (req, res, next) {
     else{
         res.status(403);
         res.send({
-            "logged": false
+            "message": 'Non connecté'
         });
     }
 }

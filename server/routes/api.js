@@ -10,7 +10,7 @@ router.post('/login', (req, res) => {
   var pseudo = req.body.pseudo;
   var pw = req.body.password;
   if (typeof pseudo === 'undefined' || typeof pw === 'undefined') {
-    res.status(403);
+    res.status(500);
     res.send({
       "login": "Le mot de passe ou le pseudo est manquant"
     });

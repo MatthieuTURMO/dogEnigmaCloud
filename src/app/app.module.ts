@@ -39,6 +39,7 @@ import { ValidateEqualDirective } from './-directives/validate-equal.directive';
 
 //own services
 import { LoginService } from './-services/login.service';
+import { UserService } from './-services/user.service';
 
 //router
 import { AppRoutingModule } from './app.routing';
@@ -74,7 +75,8 @@ import { EmailPatternDirective } from './-directives/email-pattern.directive';
     HttpModule
   ],
   providers: [
-    LoginService
+    LoginService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

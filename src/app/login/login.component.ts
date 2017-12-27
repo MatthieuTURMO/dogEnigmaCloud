@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
   constructor(private _loginService: LoginService) { }
 
   ngOnInit() {
-    console.log('init');
   }
 
   onSubmit() {

@@ -37,7 +37,34 @@ router.post('/', checkAuth.isAuthenticated, (req, res) => {
       });
     }
   });
+});
 
+//test la disponibilité d'un pseudo dans la base de données
+router.post('/check', (req, res) => {
+  console.log('POST /Uses/check');
+  var pseudo = req.body.pseudo;
+  if (typeof pseudo === 'undefined') {
+    res.status(500);
+    res.send({
+      message: "Le pseudo est manquant"
+    });
+  } else {
+    User.findOne({
+      pseudo: pseudo
+    }, function (err, user) {
+      if (!user) {
+        //l'utilisateur est disponible
+        res.send({
+          message: "OK"
+        });
+      } else {
+        res.status(302);
+        res.send({
+          message: "Pseudo déjà utilisé"
+        });
+      }
+    });
+  }
 });
 
 module.exports = router;
