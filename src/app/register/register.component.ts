@@ -4,6 +4,8 @@ import { AlertErrorComponent } from '../alert-error/alert-error.component';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TdLoadingService } from '@covalent/core';
 import { MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
+
 import * as $ from 'jquery';
 
 @Component({
@@ -13,7 +15,7 @@ import * as $ from 'jquery';
 })
 export class RegisterComponent implements OnInit {
 
-  @ViewChild('loginForm') loginForm: HTMLFormElement;
+  @ViewChild('registerForm') registerForm: HTMLFormElement;
 
   //variable à envoyer au serveur pour la persistance
   private newUser = {
@@ -32,7 +34,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private _userService: UserService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private _router: Router
   ) { }
 
   ngOnInit() {
@@ -43,6 +46,17 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     this.loadingRequest = true;
+    this._userService.register(this.newUser).subscribe(
+      res => {
+        this.loadingRequest = false;
+        this._router.navigate(['login']);
+        console.log('OK');
+      },
+      err => {
+        this.loadingRequest = false;
+        console.log("ERR", err);
+      }
+    );
   }
 
   private checkAvailability($event, formData: any) {

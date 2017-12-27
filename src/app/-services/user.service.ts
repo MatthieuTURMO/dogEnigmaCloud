@@ -12,7 +12,13 @@ export class UserService {
   public checkAvailability(pseudo: String) {
     return this.http.post(myGlobals.BASE_API_URL + '/users/check', {
       "pseudo": pseudo
-    }).map((res:Response) => res.json());
+    }).map((res: Response) => res.json());
+  }
+
+  public register(user: any) {
+    return this.http.post(myGlobals.BASE_API_URL + '/users/register', {
+      "user": user
+    }).map((res: Response) => res.json());
   }
 
 }

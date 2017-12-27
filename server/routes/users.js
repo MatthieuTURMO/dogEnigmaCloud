@@ -15,24 +15,22 @@ router.get('/', checkAuth.isAuthenticated, (req, res) => {
 });
 
 //crée un nouvel utilisateur
-router.post('/', checkAuth.isAuthenticated, (req, res) => {
-  var newUser = {
-    "pseudo": req.body.pseudo,
-    "password": req.body.password
-  };
+router.post('/register', (req, res) => {
+  var newUser = req.body.user;
   //on teste l'existence d'un utilisateur avec le même pseudo
   User.findOne({
-    pseudo: req.body.pseudo
+    pseudo: req.body.user.pseudo
   }, function (err, existingUsr) {
     if (existingUsr) {
       res.status(500);
       res.send({
-        "create": "L'utilisateur existe déjà."
+        "message": "L'utilisateur existe déjà."
       });
     } else {
+      newUser.droits = 1;
       new User(newUser).save(function (err, createdUser) {
         res.send({
-          "create": "OK"
+          "message": "OK"
         });
       });
     }
@@ -46,7 +44,7 @@ router.post('/check', (req, res) => {
   if (typeof pseudo === 'undefined') {
     res.status(500);
     res.send({
-      message: "Le pseudo est manquant"
+      "message": "Le pseudo est manquant"
     });
   } else {
     User.findOne({
@@ -55,12 +53,12 @@ router.post('/check', (req, res) => {
       if (!user) {
         //l'utilisateur est disponible
         res.send({
-          message: "OK"
+          "message": "OK"
         });
       } else {
         res.status(302);
         res.send({
-          message: "Pseudo déjà utilisé"
+          "message": "Pseudo déjà utilisé"
         });
       }
     });

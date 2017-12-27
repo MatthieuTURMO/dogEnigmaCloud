@@ -45,6 +45,7 @@ import { UserService } from './-services/user.service';
 import { AppRoutingModule } from './app.routing';
 import { AlertErrorComponent } from './alert-error/alert-error.component';
 import { EmailPatternDirective } from './-directives/email-pattern.directive';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { EmailPatternDirective } from './-directives/email-pattern.directive';
     AlertErrorComponent,
     RegisterComponent,
     ValidateEqualDirective,
-    EmailPatternDirective
+    EmailPatternDirective,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
