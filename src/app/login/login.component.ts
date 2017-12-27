@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../-services/login.service';
 import { AlertErrorComponent } from '../alert-error/alert-error.component';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import * as $ from 'jquery';
 
@@ -21,7 +22,9 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  constructor(private _loginService: LoginService) { }
+  constructor(private _loginService: LoginService,
+    private _router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -33,6 +36,7 @@ export class LoginComponent implements OnInit {
       res => {
         this.loadingRequest = false;
         this.error = false;
+        this._router.navigate(['home']);
       },
       err => {
         this.loadingRequest = false;
