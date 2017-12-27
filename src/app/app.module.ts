@@ -22,13 +22,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatIconModule} from '@angular/material/icon';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 //covalent
 import {
   CovalentLayoutModule,
-  CovalentStepsModule
+  CovalentStepsModule,
+  CovalentLoadingModule
 } from '@covalent/core';
-
 //own components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -71,6 +71,8 @@ import { EmailPatternDirective } from './-directives/email-pattern.directive';
     MatInputModule,
     ReactiveFormsModule,
     MatSelectModule,
+    CovalentLoadingModule,
+    MatSnackBarModule,
     MatIconModule,
     HttpModule
   ],

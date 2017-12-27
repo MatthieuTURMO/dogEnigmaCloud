@@ -9,7 +9,7 @@
   <mat-card-content>
     <app-alert-error *ngIf="error" [error]="messageError"></app-alert-error>
     <!-- formulaire de connexion -->
-    <form (ngSubmit)="onSubmit()" #form="ngForm">
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm" id="registerForm">
       <mat-form-field>
         <input id="prenom" name="prenom" [(ngModel)]="newUser.prenom" #prenom="ngModel" matInput placeholder="Prénom" required>
       </mat-form-field>
@@ -19,18 +19,22 @@
       <mat-form-field>
         <input id="email" name="email" [(ngModel)]="newUser.email" #email="ngModel" matInput placeholder="Email" required emailPattern>
       </mat-form-field>
+
       <mat-form-field>
-        <input (change)="checkAvailability($event)" id="pseudo" name="pseudo" [(ngModel)]="newUser.pseudo" #pseudo="ngModel" matInput placeholder="Pseudo" required>
+        <ng-template tdLoading [tdLoadingUntil]="!loadingCheckAvailability" tdLoadingStrategy="overlay" tdLoadingType="circular">
+          <input (change)="checkAvailability($event, registerForm)" id="pseudo" name="pseudo" [(ngModel)]="newUser.pseudo" #pseudo="ngModel" matInput
+            placeholder="Pseudo" required>
+        </ng-template>
       </mat-form-field>
       <mat-form-field>
         <input id="password" name="password" [(ngModel)]="newUser.password" #password="ngModel" type="password" matInput placeholder="Mot de passe"
-          required validateEqual="confirm" reverse="true"> 
+          required validateEqual="confirm" reverse="true">
       </mat-form-field>
       <mat-form-field>
-        <input id="confirm" name="confirm" [(ngModel)]="newUser.confirmPassword" #confirm="ngModel" type="password" matInput placeholder="Confirmer le mot de passe"
+        <input id="confirm" name="confirm" [(ngModel)]="confirmPassword" #confirm="ngModel" type="password" matInput placeholder="Confirmer le mot de passe"
           required validateEqual="password">
       </mat-form-field>
-      <button [disabled]="!form.valid" type="submit" mat-raised-button color="primary">Créer</button>
+      <button [disabled]="!registerForm.valid" type="submit" mat-raised-button color="primary">Créer</button>
     </form>
   </mat-card-content>
 </mat-card>
