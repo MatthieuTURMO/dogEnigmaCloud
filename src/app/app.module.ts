@@ -9,7 +9,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import 'hammerjs';
 
 //own components
-import { AppComponent } from './app.component';
+
 
 //material
 import {
@@ -30,7 +30,12 @@ import {
 } from '@covalent/core';
 
 //own components
+import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+
+//own directives
+import { ValidateEqualDirective } from './-directives/validate-equal.directive';
 
 //own services
 import { LoginService } from './-services/login.service';
@@ -38,14 +43,17 @@ import { LoginService } from './-services/login.service';
 //router
 import { AppRoutingModule } from './app.routing';
 import { AlertErrorComponent } from './alert-error/alert-error.component';
-import { RegisterComponent } from './register/register.component';
+import { EmailPatternDirective } from './-directives/email-pattern.directive';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AlertErrorComponent,
-    RegisterComponent
+    RegisterComponent,
+    ValidateEqualDirective,
+    EmailPatternDirective
   ],
   imports: [
     BrowserModule,

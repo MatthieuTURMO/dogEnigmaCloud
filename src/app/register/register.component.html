@@ -17,14 +17,18 @@
         <input id="nom" name="nom" [(ngModel)]="newUser.nom" #nom="ngModel" matInput placeholder="Nom" required>
       </mat-form-field>
       <mat-form-field>
-        <input id="email" name="email" [(ngModel)]="newUser.email" #email="ngModel" matInput placeholder="Email" required email>
+        <input id="email" name="email" [(ngModel)]="newUser.email" #email="ngModel" matInput placeholder="Email" required emailPattern>
       </mat-form-field>
       <mat-form-field>
         <input id="pseudo" name="pseudo" [(ngModel)]="newUser.pseudo" #pseudo="ngModel" matInput placeholder="Pseudo" required>
       </mat-form-field>
       <mat-form-field>
         <input id="password" name="password" [(ngModel)]="newUser.password" #password="ngModel" type="password" matInput placeholder="Mot de passe"
-          required>
+          required validateEqual="confirm" reverse="true"> 
+      </mat-form-field>
+      <mat-form-field>
+        <input id="confirm" name="confirm" [(ngModel)]="newUser.confirmPassword" #confirm="ngModel" type="password" matInput placeholder="Confirmer le mot de passe"
+          required validateEqual="password">
       </mat-form-field>
       <button [disabled]="!form.valid" type="submit" mat-raised-button color="primary">Valider</button>
     </form>
