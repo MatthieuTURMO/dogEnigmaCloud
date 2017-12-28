@@ -20,7 +20,8 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "dog-enigma-theme.scss"
+        "dog-enigma-theme.scss",
+        "bootstrap.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js"

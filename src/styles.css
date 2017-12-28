@@ -1,2 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 /* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+
+/* Pour tous les composants en dessous du top-menu */
+.under-nav{
+    margin-top : 80px;
+}

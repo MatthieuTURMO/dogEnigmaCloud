@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../-services/login.service';
+import { UserDataService } from '../-services/user-data.service';
 import { AlertErrorComponent } from '../alert-error/alert-error.component';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -22,7 +23,9 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  constructor(private _loginService: LoginService,
+  constructor(
+    private _loginService: LoginService,
+    private _userDataService : UserDataService,
     private _router: Router
   ) { }
 
@@ -34,14 +37,18 @@ export class LoginComponent implements OnInit {
     //connexion au serveur
     this._loginService.login(this.user.pseudo, this.user.password).subscribe(
       res => {
+        //on enleve les loaders, les erreurs, et on stocke les données dans le navigateur
         this.loadingRequest = false;
         this.error = false;
+        this._userDataService.setUser(res.user);
+        //on redirige vers la page d'accueil
         this._router.navigate(['home']);
       },
       err => {
         this.loadingRequest = false;
         this.error = true;
         this.messageError = err;
+        console.log('ERREUR SERVEUR', err);
       });
   }
 

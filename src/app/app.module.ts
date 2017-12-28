@@ -40,6 +40,7 @@ import { ValidateEqualDirective } from './-directives/validate-equal.directive';
 //own services
 import { LoginService } from './-services/login.service';
 import { UserService } from './-services/user.service';
+import { UserDataService } from './-services/user-data.service';
 
 //router
 import { AppRoutingModule } from './app.routing';
@@ -86,7 +87,8 @@ import { SidebarModule } from 'ng-sidebar';
   ],
   providers: [
     LoginService,
-    UserService
+    UserService,
+    UserDataService
   ],
   bootstrap: [AppComponent]
 })
