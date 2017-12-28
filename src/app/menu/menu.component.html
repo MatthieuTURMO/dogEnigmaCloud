@@ -1,0 +1,30 @@
+<nav class="top-menu">
+  <mat-icon (click)="_toggleSideNav()">menu</mat-icon>
+  <ul>
+    <li>
+      <a mat-button>Test</a>
+    </li>
+    <li>
+      <a mat-button>Test1</a>
+    </li>
+    <li>
+      <a mat-button>Test2</a>
+    </li>
+  </ul>
+</nav>
+
+
+<div #overlay class="overlay-side-nav lolxd" (click)="_closeSideNav()" [ngClass]="{close : !_sideNavOpened, open : _sideNavOpened}"></div>
+<nav class="side-nav" [ngClass]="{close : !_sideNavOpened, open : _sideNavOpened}">
+  <ul>
+    <li>
+      <a mat-button (click)="onClick">Go Here</a>
+    </li>
+    <li>
+      <a mat-button (click)="onClick">Go Here 2</a>
+    </li>
+    <li>
+      <a mat-button (click)="onClick">Go Here 3</a>
+    </li>
+  </ul>
+</nav>

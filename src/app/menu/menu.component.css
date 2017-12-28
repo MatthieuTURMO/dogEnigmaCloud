@@ -1,0 +1,81 @@
+nav.top-menu {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 64px;
+    left: 0;
+    background-color: #3f51b5;
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+    /* the rest of your styling */
+    line-height: 64px;
+}
+
+nav.top-menu>ul {
+    margin: 0;
+    display: block;
+    list-style-type: none;
+}
+
+nav.top-menu>ul>li {
+    color: white;
+    display: inline;
+}
+
+nav.top-menu>mat-icon {
+    color: white;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+nav.side-nav {
+    z-index: 1002;
+    position: fixed;
+    height: 100%;
+    background-color: white;
+    top: 0;
+    width: 250px;
+    transition: all .5s ease;
+    padding : 0;
+    text-align: left;
+}
+
+nav.side-nav.close {
+    left: -250px;
+}
+
+nav.side-nav.open {
+    left: 0;
+}
+
+nav.side-nav > ul {
+    width : 100%;
+    padding : 0;
+    margin : 0;
+}
+
+.overlay-side-nav {
+    background-color: black;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease;
+}
+
+.overlay-side-nav.open {
+    z-index: 1001;
+    opacity: 0.6;
+}
+
+.overlay-side-nav.close {
+    opacity: 0;
+    z-index: -1;
+}

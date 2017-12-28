@@ -46,6 +46,10 @@ import { AppRoutingModule } from './app.routing';
 import { AlertErrorComponent } from './alert-error/alert-error.component';
 import { EmailPatternDirective } from './-directives/email-pattern.directive';
 import { HomeComponent } from './home/home.component';
+import { MenuComponent } from './menu/menu.component';
+
+//Others modules
+import { SidebarModule } from 'ng-sidebar';
 
 
 @NgModule({
@@ -56,7 +60,8 @@ import { HomeComponent } from './home/home.component';
     RegisterComponent,
     ValidateEqualDirective,
     EmailPatternDirective,
-    HomeComponent
+    HomeComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +81,7 @@ import { HomeComponent } from './home/home.component';
     CovalentLoadingModule,
     MatSnackBarModule,
     MatIconModule,
+    SidebarModule.forRoot(),
     HttpModule
   ],
   providers: [
