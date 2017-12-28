@@ -17,8 +17,8 @@ mat-card-header {
     margin: -24px 0 -10px -24px !important;
     text-align: center;
     padding: 24px;
-    width: 100%;
-    background-color: #b5b6b9;
+    width: calc(100% + 48px);
+    background-color: #b5b6b9;    
 }
 
 .mat-card-header-text {
