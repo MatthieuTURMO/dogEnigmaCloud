@@ -51,6 +51,7 @@ import { MenuComponent } from './menu/menu.component';
 
 //Others modules
 import { SidebarModule } from 'ng-sidebar';
+import { MoncompteComponent } from './moncompte/moncompte.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { SidebarModule } from 'ng-sidebar';
     ValidateEqualDirective,
     EmailPatternDirective,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    MoncompteComponent
   ],
   imports: [
     BrowserModule,

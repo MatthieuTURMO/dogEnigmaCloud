@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         this.error = false;
         this._userDataService.setUser(res.user);
         //on redirige vers la page d'accueil
-        this._router.navigate(['home']);
+        this._router.navigate(['/dogEnigmaCloud/home']);
       },
       err => {
         this.loadingRequest = false;

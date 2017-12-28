@@ -2,10 +2,10 @@
   <mat-icon (click)="_toggleSideNav($event)">menu</mat-icon>
   <ul>
     <li>
-      <a mat-button>Test</a>
+      <a mat-button [routerLink]="['/dogEnigmaCloud/me']" >Test</a>
     </li>
     <li>
-      <a mat-button>Test1</a>
+      <a mat-button [routerLink]="['/dogEnigmaCloud/home']">Test1</a>
     </li>
     <li>
       <a mat-button>Test2</a>
@@ -28,3 +28,5 @@
     </li>
   </ul>
 </nav>
+
+<router-outlet></router-outlet>
