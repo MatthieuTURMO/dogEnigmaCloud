@@ -1,0 +1,30 @@
+.background-image-presentation {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    background-image: url('/assets/images/background.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.background-image-presentation>div {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: 0;
+}
+
+.background-image-presentation>div>h1 {
+    margin: 0;
+}
+
+.info-enigma {
+    margin-top: 15px;
+}
+
+.white {
+    color: white;
+}
