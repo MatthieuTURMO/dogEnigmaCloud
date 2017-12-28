@@ -1,5 +1,5 @@
 <nav class="top-menu">
-  <mat-icon (click)="_toggleSideNav()">menu</mat-icon>
+  <mat-icon (click)="_toggleSideNav($event)">menu</mat-icon>
   <ul>
     <li>
       <a mat-button>Test</a>
@@ -14,7 +14,7 @@
 </nav>
 
 
-<div #overlay class="overlay-side-nav lolxd" (click)="_closeSideNav()" [ngClass]="{close : !_sideNavOpened, open : _sideNavOpened}"></div>
+<div #overlay class="overlay-side-nav" (click)="_toggleSideNav($event)" [ngClass]="{close : !_sideNavOpened, open : _sideNavOpened}"></div>
 <nav class="side-nav" [ngClass]="{close : !_sideNavOpened, open : _sideNavOpened}">
   <ul>
     <li>

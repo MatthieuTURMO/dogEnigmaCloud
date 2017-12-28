@@ -14,18 +14,13 @@ export class MenuComponent implements OnInit {
   constructor(private rd: Renderer2) { }
 
   ngOnInit() {
-    var self = this;
-    var t = self.overlay.nativeElement.classList;
-
-    console.log(t);
   }
 
-  private _toggleSideNav() {
-    console.log('toggle');
-    this._sideNavOpened = !this._sideNavOpened;
-  }
-
-  private _closeSideNav(next) {
-    this._sideNavOpened = false;
+  //AFFICHE / DESAFFICHE LE SIDENAV MENU
+  private _toggleSideNav($event) {
+    // on toggle sur l'overlay uniquement s'il est ouvert, sinon on ne fait rien
+    if (!$event.srcElement.classList.contains('overlay-side-nav') || this._sideNavOpened) {
+      this._sideNavOpened = !this._sideNavOpened;
+    } 
   }
 }
