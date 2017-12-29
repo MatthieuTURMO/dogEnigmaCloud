@@ -51,5 +51,4 @@ export class LoginComponent implements OnInit {
         console.log('ERREUR SERVEUR', err);
       });
   }
-
 }

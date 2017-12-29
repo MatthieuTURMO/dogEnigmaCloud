@@ -15,7 +15,8 @@ const routes: Routes = [
         path: 'dogEnigmaCloud', component: MenuComponent, children: [
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-            { path: 'me', component: MoncompteComponent }
+            { path: 'me', component: MoncompteComponent },
+            { path: '**', redirectTo: 'home' }
         ]
     },
     { path: '**', redirectTo: 'login' }

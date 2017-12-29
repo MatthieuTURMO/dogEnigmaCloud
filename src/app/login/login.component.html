@@ -8,7 +8,7 @@
   <mat-progress-bar *ngIf="loadingRequest" mode="indeterminate"></mat-progress-bar>
   <mat-card-content>
     <app-alert-error *ngIf="error" [error]="messageError"></app-alert-error>
-    <!-- formulaire de connexion -->
+    
     <form (ngSubmit)="onSubmit()">
       <mat-form-field>
         <input id="pseudo" name="pseudo" [(ngModel)]="user.pseudo" #pseudo="ngModel" matInput placeholder="Pseudo" required>
