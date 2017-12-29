@@ -52,7 +52,8 @@ import { MenuComponent } from './menu/menu.component';
 //Others modules
 import { SidebarModule } from 'ng-sidebar';
 import { MoncompteComponent } from './moncompte/moncompte.component';
-
+import { HelpComponent } from './help/help.component';
+import { MnFullpageModule } from 'ngx-fullpage';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { MoncompteComponent } from './moncompte/moncompte.component';
     EmailPatternDirective,
     HomeComponent,
     MenuComponent,
-    MoncompteComponent
+    MoncompteComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
@@ -85,6 +87,7 @@ import { MoncompteComponent } from './moncompte/moncompte.component';
     MatSnackBarModule,
     MatIconModule,
     SidebarModule.forRoot(),
+    MnFullpageModule.forRoot(),
     HttpModule
   ],
   providers: [

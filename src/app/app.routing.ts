@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { MoncompteComponent } from './moncompte/moncompte.component';
+import { HelpComponent } from './help/help.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'me', component: MoncompteComponent },
+            { path: 'help', component: HelpComponent },
             { path: '**', redirectTo: 'home' }
         ]
     },

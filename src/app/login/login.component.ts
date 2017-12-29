@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
         this.loadingRequest = false;
         this.error = true;
         this.messageError = err;
-        console.log('ERREUR SERVEUR', err);
+        console.log('ERREUR LOGIN', err);
       });
   }
 }
