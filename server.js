@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const api = require('./server/routes/api');
 const usersApi = require('./server/routes/users');
 const testApi = require('./server/routes/test');
+const uploadApi = require('./server/routes/upload');
 
 
 const app = express();
@@ -46,7 +47,7 @@ app.use(bodyParser.urlencoded({
 //Gestion des CORS, temporaire pour le développement
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "http://localhost:4200");
-  res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization')
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
   res.header('Access-Control-Allow-Credentials', 'true')
   next();
@@ -55,10 +56,14 @@ app.use(function (req, res, next) {
 // Point static path to dist
 app.use(express.static(path.join(__dirname, 'dist')));
 
+//public folder (upload files)
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Set our api routes
 app.use('/api', api);
 app.use('/api/users', usersApi);
 app.use('/api/test', testApi);
+app.use('/api/upload', uploadApi);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
@@ -70,6 +75,12 @@ app.get('*', (req, res) => {
  */
 const port = process.env.PORT || '3000';
 app.set('port', port);
+
+
+/*
+ * Gestionnaire d'erreurs
+ */
+
 
 /**
  * Create HTTP server.

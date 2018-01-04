@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import {HttpClientModule} from '@angular/common/http';
 
 import 'hammerjs';
 
@@ -27,8 +27,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {
   CovalentLayoutModule,
   CovalentStepsModule,
-  CovalentLoadingModule
+  CovalentLoadingModule,
+  CovalentFileModule
 } from '@covalent/core';
+
 //own components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -41,6 +43,7 @@ import { ValidateEqualDirective } from './-directives/validate-equal.directive';
 import { LoginService } from './-services/login.service';
 import { UserService } from './-services/user.service';
 import { UserDataService } from './-services/user-data.service';
+import { UploadService } from './-services/upload.service';
 
 //router
 import { AppRoutingModule } from './app.routing';
@@ -70,12 +73,14 @@ import { MnFullpageModule } from 'ngx-fullpage';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     CovalentLayoutModule,
     CovalentStepsModule,
     MatButtonModule,
     AppRoutingModule,
     MatCheckboxModule,
+    CovalentFileModule,
     MatProgressBarModule,
     FormsModule,
     MatCardModule,
@@ -93,7 +98,8 @@ import { MnFullpageModule } from 'ngx-fullpage';
   providers: [
     LoginService,
     UserService,
-    UserDataService
+    UserDataService,
+    UploadService
   ],
   bootstrap: [AppComponent]
 })
