@@ -12,12 +12,15 @@ export class UploadService {
 
   constructor(private http: HttpClient) { }
 
-  public upload(file: File, next) {
+  //upload un fichier vers le back end
+  public upload(file: File, callback) {
+    //on renvoie un observable pour attendre la fin de l'upload
     return Observable.fromPromise(new Promise((resolve, reject) => {
       var formData: FormData = new FormData();
       formData.append("file", file, file.name);
 
       var xhr = new XMLHttpRequest();
+      //si y'a erreur ou succes sur l'envoi total du fichier
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
           if (xhr.status === 200 && xhr.response=="success") {
@@ -29,10 +32,9 @@ export class UploadService {
           }
         }
       }
+      //pour calculer la progression de l'envoi du fichier
       xhr.upload.addEventListener("progress", (ev: ProgressEvent) => {
-        console.log(ev);
-        next(ev);
-        //You can handle progress events here if you want to track upload progress (I used an observable<number> to fire back updates to whomever called this upload)
+        callback(ev);
       });
       xhr.open("POST", myGlobals.BASE_API_URL + '/upload/', true);
       xhr.send(formData);

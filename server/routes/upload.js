@@ -4,7 +4,6 @@ var checkAuth = require('../services/checkAuth');
 var formidable = require('formidable');
 var fs = require('fs');
 var path = require('path');
-var multer = require("multer");
 
 router.post('/', function (req, res) {
   // create an incoming form object
@@ -25,6 +24,10 @@ router.post('/', function (req, res) {
   // log any errors that occur
   form.on('error', function (err) {
     console.log('An error has occured: \n' + err);
+    res.status(500);
+    res.send({
+        "message" : "Erreur serveur lors de l\'upload : "+err
+    });
   });
 
   // once all the files have been uploaded, send a response to the client

@@ -25,22 +25,22 @@ export class MoncompteComponent implements OnInit {
   ngOnInit() {
   }
 
+  //upload du fichier
   onSubmit() {
     var self = this;
     this._uploadService.upload(this.files, function (ev) {
-      console.log("La on est dans le component", ev);
+      //calcul du pourcentage d'avancement de l'upload du fichier
       var total = ev.total;
       var loaded = ev.loaded;
-      self.avancement = (loaded/total)*100;
-      console.log(self.avancement);
+      self.avancement = (loaded / total) * 100;
+      console.log("Avancement : ", self.avancement);
     }).subscribe(
       success => {
-        console.log('ok');
+        console.log('SUCCES UPLOAD');
       },
       err => {
-        console.log('error');
-      }
-      )
+        console.log('ERREUR UPLOAD', err);
+      });
   }
 
 }
