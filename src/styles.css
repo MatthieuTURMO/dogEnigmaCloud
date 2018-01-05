@@ -1,7 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+
+
 /* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
 
+
 /* Pour tous les composants en dessous du top-menu */
-.under-nav{
-    margin-top : 64px;
+
+.under-nav {
+    margin-top: 64px;
+}
+
+.text-kb-light-blue {
+    color: #D4F1FF;
+}
+
+.text-kb-med-blue {
+    color: #567CC1;
+}
+
+.text-kb-dark-blue {
+    color: #293991;
+}
+
+.text-kb-yellow {
+    color: #FFD163;
+}
+
+.text-kb-red {
+    color: #D15735;
+}
+
+.bg-kb-light-blue {
+    background-color: #D4F1FF;
+}
+
+.bg-kb-med-blue {
+    background-color: #567CC1;
+}
+
+.bg-kb-dark-blue {
+    background-color: #293991;
+}
+
+.bg-kb-yellow {
+    background-color: #FFD163;
+}
+
+.bg-kb-red {
+    background-color: #D15735;
+}
+
+.text-kb-white {
+    color: white !important;
+}
+
+.mat-raised-button.mat-primary[disabled] {
+    color: #8a8a8a !important;
+}
+
+.mat-raised-button.mat-accent[disabled] {
+    color: #8a8a8a !important;
+}
+
+.mat-raised-button.mat-warn[disabled] {
+    color: #8a8a8a !important;
 }

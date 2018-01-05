@@ -76,12 +76,6 @@ app.get('*', (req, res) => {
 const port = process.env.PORT || '3000';
 app.set('port', port);
 
-
-/*
- * Gestionnaire d'erreurs
- */
-
-
 /**
  * Create HTTP server.
  */

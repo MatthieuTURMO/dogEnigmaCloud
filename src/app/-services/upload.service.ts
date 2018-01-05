@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { HttpClientModule, HttpRequest, HttpClient, HttpEventType, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 import * as myGlobals from '../globals';
 import 'rxjs/add/operator/map';
@@ -10,7 +9,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UploadService {
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   //upload un fichier vers le back end
   public upload(file: File, callback) {

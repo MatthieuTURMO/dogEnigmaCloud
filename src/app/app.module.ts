@@ -23,6 +23,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 //covalent
 import {
   CovalentLayoutModule,
@@ -90,6 +92,7 @@ import { MnFullpageModule } from 'ngx-fullpage';
     MatSelectModule,
     CovalentLoadingModule,
     MatSnackBarModule,
+    MatProgressSpinnerModule,
     MatIconModule,
     SidebarModule.forRoot(),
     MnFullpageModule.forRoot(),

@@ -65,11 +65,11 @@ router.post('/check', (req, res) => {
   }
 });
 
-router.all('*', function(req, res){
-  res.status(404);
-  res.send({
-    "message" : "Cette requête n'existe pas."
-  });
-});
+// router.all('*', function(req, res){
+//   res.status(404);
+//   res.send({
+//     "message" : "Cette requête n'existe pas."
+//   });
+// });
 
 module.exports = router;
