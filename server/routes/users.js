@@ -27,7 +27,7 @@ router.post('/register', (req, res) => {
         "message": "L'utilisateur existe déjà."
       });
     } else {
-      newUser.droits = 1;
+      newUser.privilege = 1;
       new User(newUser).save(function (err, createdUser) {
         res.send({
           "message": "OK"

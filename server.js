@@ -7,8 +7,8 @@ const bodyParser = require('body-parser');
 // Get our API routes
 const api = require('./server/routes/api');
 const usersApi = require('./server/routes/users');
-const testApi = require('./server/routes/test');
 const uploadApi = require('./server/routes/upload');
+const images = require('./server/routes/images');
 
 
 const app = express();
@@ -62,8 +62,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Set our api routes
 app.use('/api', api);
 app.use('/api/users', usersApi);
-app.use('/api/test', testApi);
 app.use('/api/upload', uploadApi);
+app.use('/api/public/images', images);
+
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
