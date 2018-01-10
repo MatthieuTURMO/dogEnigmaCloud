@@ -14,6 +14,13 @@ router.get('/', checkAuth.isAuthenticated, (req, res) => {
   })
 });
 
+router.get('/current', function (req, res) {
+  console.log('CURRENT',req.session.user);
+  User.findById(req.session.user._id, function (err, usr) {
+    res.send(usr);
+  })
+});
+
 //crée un nouvel utilisateur
 router.post('/register', (req, res) => {
   var newUser = req.body.user;
@@ -64,6 +71,29 @@ router.post('/check', (req, res) => {
     });
   }
 });
+
+router.delete('/:id', function (req, res) {
+  var userId = req.params.id;
+  User.findById(userId, function (err, user) {
+    if (err) {
+      res.send(500, err);
+      throw err;
+    }
+    if (user) {
+      user.remove();
+      res.send({
+        "message": "OK"
+      });
+    } else {
+      res.status(404);
+      res.send({
+        "message": "Cet utilisateur n'existe pas"
+      });
+    }
+  });
+});
+
+
 
 // router.all('*', function(req, res){
 //   res.status(404);

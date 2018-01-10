@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+const Ebook = require('../models/Ebook');
 
 var Schema = mongoose.Schema,
   ObjectId = Schema.ObjectId;
@@ -30,6 +31,21 @@ var commentSchema = new Schema({
     type: String,
     required: true
   },
+});
+
+commentSchema.pre('remove', function (next) {
+  var self = this;
+  Ebook.find({
+    "comments": self
+  }).exec(function (err, listEbooks) {
+    listEbooks.forEach(ebook => {
+      ebook.comments.pull({
+        _id: self._id
+      });
+      ebook.save();
+    });
+  });
+  next();
 });
 
 module.exports = mongoose.model('Comment', commentSchema);

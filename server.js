@@ -8,8 +8,13 @@ const bodyParser = require('body-parser');
 const api = require('./server/routes/api');
 const usersApi = require('./server/routes/users');
 const uploadApi = require('./server/routes/upload');
+const categoryApi = require('./server/routes/category');
+const commentApi = require('./server/routes/comment');
+const libraryApi = require('./server/routes/library');
+const ebookApi = require('./server/routes/ebook');
 const images = require('./server/routes/images');
 
+var printPath = require('./server/services/printPath').printPath;
 
 const app = express();
 
@@ -59,10 +64,16 @@ app.use(express.static(path.join(__dirname, 'dist')));
 //public folder (upload files)
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(printPath);
+
 // Set our api routes
 app.use('/api', api);
 app.use('/api/users', usersApi);
 app.use('/api/upload', uploadApi);
+app.use('/api/category', categoryApi);
+app.use('/api/comment', commentApi);
+app.use('/api/library', libraryApi);
+app.use('/api/ebook', ebookApi);
 app.use('/api/public/images', images);
 
 
