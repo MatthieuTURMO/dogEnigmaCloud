@@ -15,7 +15,7 @@
 
 
 <!-- <div #overlay class="overlay-side-nav" (click)="_toggleSideNav($event); animateMe();" [ngClass]="{close : !_sideNavOpened, open : _sideNavOpened}"></div> -->
-<nav class="side-nav" [ngClass]="{close : !_sideNavOpened, open : _sideNavOpened}">
+<nav class="side-nav" [ngClass]="{'close' : !_sideNavOpened, 'open' : _sideNavOpened}">
   <ul>
     <li>
       <a mat-button (click)="onClick">Go Here</a>

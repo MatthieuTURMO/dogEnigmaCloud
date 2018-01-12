@@ -42,8 +42,10 @@ export class MenuComponent implements OnInit {
 
   //AFFICHE / DESAFFICHE LE SIDENAV MENU
   private _toggleSideNav($event) {
+
+    var target = $event.target || $event.srcElement;
     // on toggle sur l'overlay uniquement s'il est ouvert, sinon on ne fait rien
-    if (!$event.srcElement.classList.contains('overlay-side-nav') || this._sideNavOpened) {
+    if (!target.classList.contains('overlay-side-nav') || this._sideNavOpened) {
       this._sideNavOpened = !this._sideNavOpened;
     }
   }

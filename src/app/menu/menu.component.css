@@ -31,6 +31,7 @@ nav.top-menu>mat-icon {
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
     cursor: pointer;
     font-weight: bold;
 }
@@ -45,9 +46,9 @@ nav.side-nav {
     transition: all .3s ease-in;
     padding: 0;
     text-align: left;
-    box-shadow: 3px 0 5px -1px rgba(0, 0, 0, .2), 6px 0 10px 0 rgba(0, 0, 0, .14), 1px 0 18px 0 rgba(0, 0, 0, .12);    
-    -webkit-box-shadow: 3px 0 5px -1px rgba(0, 0, 0, .2), 6px 0 10px 0 rgba(0, 0, 0, .14), 1px 0 18px 0 rgba(0, 0, 0, .12);    
-    -moz-box-shadow: 3px 0 5px -1px rgba(0, 0, 0, .2), 6px 0 10px 0 rgba(0, 0, 0, .14), 1px 0 18px 0 rgba(0, 0, 0, .12);    
+    box-shadow: 3px 0 5px -1px rgba(0, 0, 0, .2), 6px 0 10px 0 rgba(0, 0, 0, .14), 1px 0 18px 0 rgba(0, 0, 0, .12);
+    -webkit-box-shadow: 3px 0 5px -1px rgba(0, 0, 0, .2), 6px 0 10px 0 rgba(0, 0, 0, .14), 1px 0 18px 0 rgba(0, 0, 0, .12);
+    -moz-box-shadow: 3px 0 5px -1px rgba(0, 0, 0, .2), 6px 0 10px 0 rgba(0, 0, 0, .14), 1px 0 18px 0 rgba(0, 0, 0, .12);
 }
 
 nav.side-nav.close {
@@ -63,6 +64,7 @@ nav.side-nav>ul {
     padding: 0;
     margin: 0;
 }
+
 
 /* .overlay-side-nav {
     background-color: black;

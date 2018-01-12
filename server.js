@@ -24,8 +24,8 @@ app.set('trust proxy', 1) // trust first proxy
 app.use(session({
   cookieName: 'session',
   secret: 'larnohechelefbucheleftemhechelbuchelef89',
-  duration: 30 * 60 * 1000,
-  activeDuration: 5 * 60 * 1000,
+  duration: 12 * 60 * 60 * 1000,
+  activeDuration: 1 * 60 * 60 * 1000,
 }));
 
 
