@@ -21,7 +21,8 @@
       "styles": [
         "styles.css",
         "dog-enigma-theme.scss",
-        "bootstrap.css"
+        "bootstrap.css",
+        "global-styles/app.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",

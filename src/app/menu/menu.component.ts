@@ -36,19 +36,19 @@ export class MenuComponent implements OnInit {
     this.detectScroll(64, 20);
   }
 
-  animateSideNav() {
-    this.sideNavState = (this.sideNavState === 'close' ? 'open' : 'close');
-  }
+  // animateSideNav() {
+  //   this.sideNavState = (this.sideNavState === 'close' ? 'open' : 'close');
+  // }
 
   //AFFICHE / DESAFFICHE LE SIDENAV MENU
-  private _toggleSideNav($event) {
+  // private _toggleSideNav($event) {
 
-    var target = $event.target || $event.srcElement;
-    // on toggle sur l'overlay uniquement s'il est ouvert, sinon on ne fait rien
-    if (!target.classList.contains('overlay-side-nav') || this._sideNavOpened) {
-      this._sideNavOpened = !this._sideNavOpened;
-    }
-  }
+  //   var target = $event.target || $event.srcElement;
+  //   // on toggle sur l'overlay uniquement s'il est ouvert, sinon on ne fait rien
+  //   if (!target.classList.contains('overlay-side-nav') || this._sideNavOpened) {
+  //     this._sideNavOpened = !this._sideNavOpened;
+  //   }
+  // }
 
   //en fonction du scroll, affiche ou non la top menu bar
   private detectScroll(offsetUp, offsetDown) {

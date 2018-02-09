@@ -19,6 +19,7 @@ var printPath = require('./server/services/printPath').printPath;
 const app = express();
 
 //mise en place de la session pour chaque client
+// 12h avec 1h de réactivation à chaque action
 var session = require('client-sessions');
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({

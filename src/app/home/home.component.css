@@ -1,30 +1,58 @@
-.background-image-presentation {
-    width: 100%;
-    height: 500px;
+.presentation-koobe {
     position: relative;
-    background-image: url('/assets/images/background.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url('../../assets/images/library.jpg');
+    width: 100%;
+    height: 400px;
 }
 
-.background-image-presentation>div {
+.overlay-blue {
+    background-color: var(--primary);
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+}
+
+.presentation-koobe img {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    right: 0;
-    margin: 0;
+    height: 450px;
+    width: auto;
+    bottom: -80px;
+    left: 5%;
 }
 
-.background-image-presentation>div>h1 {
-    margin: 0;
-}
-
-.info-enigma {
-    margin-top: 15px;
-}
-
-.white {
+.presentation-koobe #label-koopou {
     color: white;
+    font-size: 15px;
+    font-style: italic;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(40deg);
+    display: block;
+    position: absolute;
+    top: 97px;
+    left: 271px;
+}
+
+.presentation-koobe .informations {
+    position: absolute;
+    right: 30%;
+    top: 100px;
+    text-align: left;
+    color: white;
+    font-size: 30px;
+}
+
+.presentation-koobe .informations .news {
+    font-size: 20px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.presentation-koobe .informations .news:before {
+    background-color: var(--accent);
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
 }

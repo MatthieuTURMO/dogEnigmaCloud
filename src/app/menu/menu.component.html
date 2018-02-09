@@ -1,5 +1,5 @@
-<nav [@myAwesomeAnimation]='sideNavState' class="top-menu">
-  <mat-icon (click)="animateSideNav(); _toggleSideNav($event)">menu</mat-icon>
+<nav class="top-menu">
+  <mat-icon>menu</mat-icon>
   <ul>
     <li>
       <a mat-button [routerLink]="['/dogEnigmaCloud/home']"><mat-icon class="margin-right">home</mat-icon><span>Home</span></a>
@@ -15,7 +15,7 @@
 
 
 <!-- <div #overlay class="overlay-side-nav" (click)="_toggleSideNav($event); animateMe();" [ngClass]="{close : !_sideNavOpened, open : _sideNavOpened}"></div> -->
-<nav class="side-nav" [ngClass]="{'close' : !_sideNavOpened, 'open' : _sideNavOpened}">
+<!-- <nav class="side-nav" [ngClass]="{'close' : !_sideNavOpened, 'open' : _sideNavOpened}">
   <ul>
     <li>
       <a mat-button (click)="onClick">Go Here</a>
@@ -27,8 +27,8 @@
       <a mat-button (click)="onClick">Go Here 3</a>
     </li>
   </ul>
-</nav>
+</nav> -->
 
-<div #testAnimation [@myAwesomeAnimation]='sideNavState' class="test-animation">
+<!-- <div #testAnimation [@myAwesomeAnimation]='sideNavState' class="test-animation"> -->
 <router-outlet></router-outlet>
-</div>
+<!-- </div> -->
