@@ -45,6 +45,20 @@
     font-size: 20px;
     position: relative;
     box-sizing: border-box;
+    color:white;
+    opacity: 0.7;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+@media (max-width: 1300px){
+    .presentation-koobe .informations{
+        right: 10%;
+    }
+}
+
+.presentation-koobe .informations .news:hover{
+    opacity: 1;
 }
 
 .presentation-koobe .informations .news:before {
